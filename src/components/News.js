@@ -5,14 +5,20 @@ export class News extends Component {
   render() {
     return (
       <div>
-        This is the news component.
-        {/* shift + alt + up/down to copy code */}
-        <NewsItem/>
-        <NewsItem/>
-        <NewsItem/>
-        <NewsItem/>
-        <NewsItem/>
-        <NewsItem/>
+        <div className="container my-3"></div>
+        <h2>QuickNews - Top Headlines</h2>
+        <div className="row">
+          {/* shift + alt + up/down to copy code */}
+          <div className="col-md-4">
+            <NewsItem title="myTitle" description="myDescription" />
+          </div>
+          <div className="col-md-4">
+            <NewsItem title="myTitle" description="myDescription" />
+          </div>
+          <div className="col-md-4">
+            <NewsItem title="myTitle" description="myDescription" />
+          </div>
+        </div>
       </div>
     )
   }
