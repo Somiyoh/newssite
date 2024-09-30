@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link, useLocation} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export class NavBars extends Component {
   render() {
@@ -9,7 +9,7 @@ export class NavBars extends Component {
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">
               QuickNews
-            </Link> 
+            </Link>
             <button
               className="navbar-toggler"
               type="button"
