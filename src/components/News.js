@@ -16,19 +16,24 @@ export class News extends Component {
     category: PropTypes.string,
   }
 
-  constructor() {
-    super()
+  capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+  constructor(props) {
+    super(props)
     this.state = {
       articles: [],
       loading: false,
       page: 1,
     }
+    document.title = `${this.capitalizeFirstLetter(this.props.category)} - QuickNews` ;
   }
 
   async updateNews() {
     const { country, category, pageSize } = this.props
     const { page } = this.state // Get the current page from state
-    const url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=f190770db4fd40da83a85fc488481af9&page=${page}&pageSize=${pageSize}`
+    const url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=d1bcc0bb53ce4d0b8f666bc592d79ee7&page=${page}&pageSize=${pageSize}`
     this.setState({ loading: true })
     let data = await fetch(url)
     let parsedData = await data.json()
@@ -58,7 +63,7 @@ export class News extends Component {
     return (
       <div className="container my-3">
         <h1 className="text-center" style={{ margin: '40px 0px' }}>
-          QuickNews - Top Headlines{' '}
+          QuickNews - Top {this.capitalizeFirstLetter(this.props.category)} Headlines
         </h1>
         {this.state.loading && <Spinner />}
         <div className="row">
