@@ -5,6 +5,7 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 export class App extends Component {
+  pageSize = 6;
   render() {
     return (
       <Router>
@@ -16,7 +17,7 @@ export class App extends Component {
               element={
                 <News
                   key="general"
-                  pageSize={6}
+                  pageSize={this.pageSize}
                   country="us"
                   category="general"
                 />
@@ -27,7 +28,7 @@ export class App extends Component {
               element={
                 <News
                   key="business"
-                  pageSize={6}
+                  pageSize={this.pageSize}
                   country="us"
                   category="business"
                 />
@@ -38,7 +39,7 @@ export class App extends Component {
               element={
                 <News
                   key="entertainment"
-                  pageSize={6}
+                  pageSize={this.pageSize}
                   country="us"
                   category="entertainment"
                 />
@@ -49,7 +50,7 @@ export class App extends Component {
               element={
                 <News
                   key="general"
-                  pageSize={6}
+                  pageSize={this.pageSize}
                   country="us"
                   category="general"
                 />
@@ -60,7 +61,7 @@ export class App extends Component {
               element={
                 <News
                   key="health"
-                  pageSize={6}
+                  pageSize={this.pageSize}
                   country="us"
                   category="health"
                 />
@@ -71,7 +72,7 @@ export class App extends Component {
               element={
                 <News
                   key="science"
-                  pageSize={6}
+                  pageSize={this.pageSize}
                   country="us"
                   category="science"
                 />
@@ -82,7 +83,7 @@ export class App extends Component {
               element={
                 <News
                   key="sports"
-                  pageSize={6}
+                  pageSize={this.pageSize}
                   country="us"
                   category="sports"
                 />
@@ -93,7 +94,7 @@ export class App extends Component {
               element={
                 <News
                   key="technology"
-                  pageSize={6}
+                  pageSize={this.pageSize}
                   country="us"
                   category="technology"
                 />
