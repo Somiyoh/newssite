@@ -7,9 +7,16 @@ export class NewsItem extends Component {
     return (
       <div className="my-3">
         <div className="card">
-          <span class="position-absolute top-0 translate-middle badge rounded-pill bg-danger" style={{left: '85%', zIndex: '1'}}>
-            {source}
-          </span>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'flex-end',
+              position: 'absolute',
+              right: '0',
+            }}
+          >
+            <span className="badge rounded-pill bg-danger">{source}</span>
+          </div>
           <img
             src={
               !imageUrl
@@ -22,8 +29,8 @@ export class NewsItem extends Component {
           <div className="card-body">
             <h5 className="card-title">{title}</h5>
             <p className="card-text">{description}...</p>
-            <p class="card-text">
-              <small class="text-body-secondary">
+            <p className="card-text">
+              <small className="text-body-secondary">
                 By {!author ? 'unknown' : author} on{' '}
                 {new Date(date).toLocaleString('en-US', {
                   timeZone: 'America/Denver',
